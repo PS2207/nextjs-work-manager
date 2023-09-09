@@ -4,6 +4,7 @@ import  bcrypt  from "bcryptjs";
 import jwt from "jsonwebtoken";
 import {connectDb} from "@/helper/db"
 
+
 export async function POST(request){
   // follow 5 steps to login-
   // (i)login email,password 
@@ -15,7 +16,7 @@ export async function POST(request){
     // })
 
     try{
-      await connectDb()
+      await connectDb();
       // (ii)find user with email/username that is used to login  -in this case we use email
       const user = await User.findOne({
         email: email 
